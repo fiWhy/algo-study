@@ -34,7 +34,7 @@ const isPrime = n => {
 
 {
   /**
-   * Complexity = O(nlog(n))
+   * Complexity = O(n + n(n-1)) = O(n+n^2-1) = O(n^2)
    */
   let n = 10000;
   let arr = [];
