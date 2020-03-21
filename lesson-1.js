@@ -34,7 +34,7 @@ const isPrime = n => {
 
 {
   /**
-   * Complexity = O(n^2)
+   * Complexity = O(nlogn)
    */
   let n = 10000;
   let arr = [];
@@ -88,6 +88,27 @@ const countN = (arr, [from, to]) => {
   }
 
   return amount;
+};
+
+const countLogN = (arr, [from, to]) => {
+  const search = (arr, n) => {
+    let l = 0,
+      r = arr.length - 1;
+
+    while (l <= r) {
+      let m = (l + r) >> 1;
+
+      if (arr[m] > n) {
+        r = m - 1;
+      } else {
+        l = m + 1;
+      }
+    }
+
+    return l;
+  };
+
+  return search(arr, to + 1) - search(arr, from) || 0;
 };
 
 /**
