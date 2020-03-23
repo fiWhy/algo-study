@@ -11,12 +11,21 @@ const collatzWithChain = n => {
     return m === 1 ? true : isEven(m) ? inner(m / 2) : inner(3 * m + 1);
   };
 
-  return [`Number: ${n}`, `Collatz check: ${inner(n)}`, `Operations: ${op}`];
+  return [n, inner(n), op];
 };
 
 const collatzTest = ([from, to]) => {
-  for (let i = from; i <= to; i++) {
-    console.log(collatzWithChain(i));
+  for (let i = from, positive = 0; i <= to; i++) {
+    const [number, result, operationsAmount] = collatzWithChain(i);
+
+    if (result) positive++;
+
+    console.log([
+      `Number: ${number}`,
+      `Collatz check: ${result}`,
+      `Operations: ${operationsAmount}`
+    ]);
+    console.log("Is every result true?: ", positive === to - from + 1);
   }
 };
 
