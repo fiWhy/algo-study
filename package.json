@@ -1,0 +1,26 @@
+{
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lesson-1-homework.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiWhy/algo-study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fiWhy/algo-study/issues"
+  },
+  "homepage": "https://github.com/fiWhy/algo-study#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

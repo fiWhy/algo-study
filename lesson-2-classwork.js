@@ -55,3 +55,14 @@ const gcd = (a, b) => (!a ? b : gcd(b % a, a));
 const lcm = (a, b) => (a * b) / gcd(a, b);
 
 // console.log(gcd(2423, 12));
+
+const superDigit = n => {
+  if (n < 10) return n;
+  const lastDigit = n % 10;
+  const res = superDigit((n - lastDigit) / 10) + lastDigit;
+
+  console.log(res);
+  return superDigit(res);
+};
+
+console.log(superDigit(148148148));
