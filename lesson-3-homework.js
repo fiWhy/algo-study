@@ -8,16 +8,16 @@ const classesMock = lodash.chunk(
 );
 
 const generate = (amount, max) =>
-  [...Array(amount)].map(_ => (Math.random() * max) >> 0);
+  [...Array(amount)].map((_) => (Math.random() * max) >> 0);
 
-const calcTime = fn => (...args) => {
+const calcTime = (fn) => (...args) => {
   const d = new Date();
   const res = fn(...args);
   return (new Date() - d) / 1000;
 };
 
-const nSum = n => (!(n / 10) ? 0 : (n % 10) + nSum((n / 10) >> 0));
-const nSumImperative = n => {
+const nSum = (n) => (!(n / 10) ? 0 : (n % 10) + nSum((n / 10) >> 0));
+const nSumImperative = (n) => {
   let l,
     num = n,
     sum = 0;
@@ -39,7 +39,7 @@ const nSumImperative = n => {
 const count = (n, step = 1) =>
   n <= 0 ? step : decWithSum(n - nSum(n), ++step);
 
-const countImperative = n => {
+const countImperative = (n) => {
   let steps = 1;
   let res = n;
   while (res > 0) {
@@ -79,30 +79,6 @@ const quickSort = (arr, l = 0, r = arr.length - 1) => {
   return arr;
 };
 
-const quickWithComparator = (arr, cmpFnc) => {
-  const partition = (arr, l, r) => {
-    const pivot = arr[(l + r) >> 1];
-    while (l < r) {
-      while (l < r && cmpFnc(arr[l], pivot)) l++;
-      while (l < r && cmpFnc(pivot, arr[r])) r--;
-
-      [arr[r], arr[l]] = [arr[l], arr[r]];
-    }
-    arr[l] = pivot;
-    return l;
-  };
-  const sort = (arr, l, r) => {
-    if (l < r) {
-      const pivot = partition(arr, l, r, cmpFnc);
-      sort(arr, l, pivot - 1);
-      sort(arr, pivot + 1, r);
-    }
-    return arr;
-  };
-
-  return sort(arr, 0, arr.length - 1);
-};
-
 const quickWithTime = calcTime(quickSort);
 /**
  * Task 2
@@ -120,7 +96,7 @@ const quickWithTime = calcTime(quickSort);
  * Task 3
  */
 const strArr = ['5', '10', '123', '1'];
-// console.log(quickWithComparator(strArr, (a, b) => Number(a) < Number(b)));
+// console.log(strArr.sort((a, b) => Number(a) - Number(b)));
 
 /**
  * Task 4
@@ -131,7 +107,7 @@ const data = [
   [10, 20, 30],
   [7, 30, 0],
   [23, 59, 59],
-  [10, 30, 30]
+  [10, 30, 30],
 ];
 
 // console.log(
