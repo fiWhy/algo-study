@@ -95,13 +95,32 @@ const quickWithTime = calcTime(quickSort);
 /**
  * Task 3
  */
-const strArr = ['5', '10', '123', '1'];
-// console.log(strArr.sort((a, b) => Number(a) - Number(b)));
+const strArr = [
+  '5',
+  '10',
+  '123',
+  '1',
+  '12345',
+  '432',
+  '1111',
+  '1111111111111111111',
+  '2222222222222222222222222222222222222222',
+  '12323423423423423423432423432432423423',
+  '1',
+  '12345',
+  '432',
+  '1111',
+  '111111111111111111',
+  '111111111111111110',
+  '111111111111111112',
+  '111111111111111109',
+];
+console.log(strArr.sort((a, b) => BigInt(a) - BigInt(b)));
 
 /**
  * Task 4
  */
-const convertTimeToNum = ([h, m, s]) => h * 1000 + m * 10 + s;
+const convertTimeToNum = ([h, m, s]) => h * 3600 + m * 60 + s;
 
 const data = [
   [10, 20, 30],
