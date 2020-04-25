@@ -115,7 +115,7 @@ const strArr = [
   '111111111111111112',
   '111111111111111109',
 ];
-console.log(strArr.sort((a, b) => BigInt(a) - BigInt(b)));
+// console.log(strArr.sort((a, b) => BigInt(a) - BigInt(b)));
 
 /**
  * Task 4
@@ -129,9 +129,7 @@ const data = [
   [10, 30, 30],
 ];
 
-// console.log(
-//   quickWithComparator(data, (a, b) => convertTimeToNum(a) < convertTimeToNum(b))
-// );
+// console.log(data.sort((a, b) => convertTimeToNum(a) - convertTimeToNum(b)));
 
 /**
  * Task 5
